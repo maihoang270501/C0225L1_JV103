@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bàn Cờ Vua</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    .chessboard {
+      display: grid;
+      grid-template-columns: 40px repeat(8, 60px);
+      grid-template-rows: 40px repeat(8, 60px);
+      border: 5px solid orange;
+      width: 530px;
+      margin: auto;
+      background-color: orange;
+    }
+    .cell {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .black {
+      background-color: black;
+      color: white;
+    }
+    .white {
+      background-color: white;
+    }
+    .header, .side {
+      background-color: orange;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Bàn Cờ Vua</h2>
+<div class="chessboard">
+  <!-- Ô trống góc trên bên trái -->
+  <div class="cell header"></div>
+
+  <!-- Hàng số 1-8 -->
+  <script>
+    let board = "";
+    let columns = "ABCDEFGH";
+
+    // Thêm số cột (1-8)
+    for (let i = 0; i < 8; i++) {
+      board += `<div class="cell header">${i + 1}</div>`;
+    }
+
+    for (let i = 0; i < 8; i++) {
+      // Thêm chữ cái hàng (A-H)
+      board += `<div class="cell side">${columns[i]}</div>`;
+
+      // Tạo bàn cờ
+      for (let j = 0; j < 8; j++) {
+        let color = (i + j) % 2 === 0 ? "white" : "black";
+        board += `<div class="cell ${color}"></div>`;
+      }
+    }
+
+    document.write(board);
+  </script>
+</div>
+
+</body>
+</html>
