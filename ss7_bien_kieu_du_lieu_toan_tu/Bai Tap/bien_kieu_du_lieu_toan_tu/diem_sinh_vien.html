@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập điểm</title>
+</head>
+<body>
+<h2>Nhập điểm các môn</h2>
+<label>Điểm Toán: <input type="number" id="diemToan" step="0.1"></label><br><br>
+<label>Điểm Lý: <input type="number" id="diemLy" step="0.1"></label><br><br>
+<label>Điểm Hóa: <input type="number" id="diemHoa" step="0.1"></label><br><br>
+<button onclick="tinhDiem()">Tính điểm</button>
+<h3 id="ketQua"></h3>
+
+<script>
+    function tinhDiem() {
+        let diemToan = parseFloat(document.getElementById("diemToan").value) || 0;
+        let diemLy = parseFloat(document.getElementById("diemLy").value) || 0;
+        let diemHoa = parseFloat(document.getElementById("diemHoa").value) || 0;
+
+        let tongDiem = diemToan + diemLy + diemHoa;
+        let trungBinh = tongDiem / 3;
+
+        document.getElementById("ketQua").innerHTML =
+            "Tổng điểm: " + tongDiem + "<br>Điểm trung bình: " + trungBinh.toFixed(2);
+    }
+</script>
+</body>
+</html>

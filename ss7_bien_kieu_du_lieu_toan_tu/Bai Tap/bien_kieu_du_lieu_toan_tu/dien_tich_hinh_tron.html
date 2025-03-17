@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích hình tròn</title>
+</head>
+<body>
+
+<h2>Tính diện tích hình tròn</h2>
+<label>Bán kính: <input type="number" id="banKinh" step="0.1"></label> cm<br><br>
+<button onclick="tinhDienTich()">Tính diện tích</button>
+<h3 id="ketQua"></h3>
+
+<script>
+    function tinhDienTich() {
+        let banKinh = parseFloat(document.getElementById("banKinh").value) || 0;
+        let dienTich = Math.PI * banKinh * banKinh;
+
+        document.getElementById("ketQua").innerHTML =
+            "Diện tích hình tròn là: " + dienTich.toFixed(2) + " cm²";
+    }
+</script>
+
+</body>
+</html>
