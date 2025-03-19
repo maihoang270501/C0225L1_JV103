@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+</head>
+<body>
+<script>
+    let weight = parseFloat(prompt("Enter weight (kg):"));
+    let height = parseFloat(prompt("Enter height (m):"));
+
+    if (isNaN(weight) || isNaN(height) || height <= 0) {
+        document.write("Invalid input. Please enter valid numbers.");
+    } else {
+        let BMI = weight / (height ** 2);
+        document.write("Your BMI is: " + BMI.toFixed(2) + "<br>");
+
+        if (BMI < 18.5) {
+            document.write("Underweight");
+        } else if (BMI < 25.0) {
+            document.write("Normal");
+        } else if (BMI < 30.0) {
+            document.write("Overweight");
+        } else {
+            document.write("Obese");
+        }
+    }
+</script>
+</body>
+</html>
