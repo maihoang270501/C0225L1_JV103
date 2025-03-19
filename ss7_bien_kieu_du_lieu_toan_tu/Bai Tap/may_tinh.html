@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            width: 80px;
+            padding: 5px;
+            margin: 5px;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #ddd;
+            border: 1px solid #bbb;
+        }
+        button:hover {
+            background-color: #ccc;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2><b>Calculator</b></h2>
+
+<input type="number" id="num1" value="0">
+<input type="number" id="num2" value="0">
+
+<br>
+
+<button onclick="calculate('+')">Addition(+)</button>
+<button onclick="calculate('-')">Subtraction(-)</button>
+<button onclick="calculate('*')">Multiplication(X)</button>
+<button onclick="calculate('/')">Division(/)</button>
+
+<p class="result" id="result">Result :</p>
+
+<script>
+    function calculate(operator) {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let result;
+
+        switch(operator) {
+            case '+':
+                result = num1 + num2;
+                document.getElementById("result").innerHTML = "Result Addition : " + result;
+                break;
+            case '-':
+                result = num1 - num2;
+                document.getElementById("result").innerHTML = "Result Subtraction : " + result;
+                break;
+            case '*':
+                result = num1 * num2;
+                document.getElementById("result").innerHTML = "Result Multiplication : " + result;
+                break;
+            case '/':
+                result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+                document.getElementById("result").innerHTML = "Result Division : " + result;
+                break;
+            default:
+                result = "Invalid Operation";
+        }
+    }
+</script>
+
+</body>
+</html>
