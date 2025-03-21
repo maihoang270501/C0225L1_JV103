@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính hoa hồng</title>
+</head>
+<body>
+
+<h3>Nhập doanh số bán hàng (VNĐ):</h3>
+<input type="number" id="sales" min="0">
+<button onclick="calculateCommission()">Tính hoa hồng</button>
+
+<h3 id="result"></h3>
+
+<script>
+  function calculateCommission() {
+    let sales = Number(document.getElementById("sales").value);
+    let commissionRate = 0;
+
+    if (sales < 10000000) {
+      commissionRate = 0.05;
+    } else if (sales < 50000000) {
+      commissionRate = 0.10;
+    } else if (sales < 100000000) {
+      commissionRate = 0.15;
+    } else {
+      commissionRate = 0.20;
+    }
+
+    let commission = sales * commissionRate;
+    document.getElementById("result").innerText =
+            `Hoa hồng nhận được: ${commission.toLocaleString()} VNĐ`;
+  }
+</script>
+
+</body>
+</html>

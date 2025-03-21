@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+
+<h3>Tính thuế thu nhập cá nhân</h3>
+<label for="income">Nhập thu nhập chịu thuế (triệu VND/tháng):</label>
+<input type="number" id="income"><br><br>
+
+<button onclick="calculateTax()">Tính thuế</button>
+
+<h3 id="result"></h3>
+
+<script>
+    function calculateTax() {
+        let income = Number(document.getElementById("income").value);
+        let tax = 0;
+
+        if (income <= 0) {
+            document.getElementById("result").innerText = " Thu nhập phải lớn hơn 0.";
+            return;
+        }
+
+        if (income <= 5) {
+            tax = income * 0.05;
+        } else if (income <= 10) {
+            tax = (5 * 0.05) + ((income - 5) * 0.10);
+        } else if (income <= 18) {
+            tax = (5 * 0.05) + (5 * 0.10) + ((income - 10) * 0.15);
+        } else if (income <= 32) {
+            tax = (5 * 0.05) + (5 * 0.10) + (8 * 0.15) + ((income - 18) * 0.20);
+        } else if (income <= 52) {
+            tax = (5 * 0.05) + (5 * 0.10) + (8 * 0.15) + (14 * 0.20) + ((income - 32) * 0.25);
+        } else if (income <= 80) {
+            tax = (5 * 0.05) + (5 * 0.10) + (8 * 0.15) + (14 * 0.20) + (20 * 0.25) + ((income - 52) * 0.30);
+        } else {
+            tax = (5 * 0.05) + (5 * 0.10) + (8 * 0.15) + (14 * 0.20) + (20 * 0.25) + (28 * 0.30) + ((income - 80) * 0.35);
+        }
+
+        document.getElementById("result").innerText = ` Thuế TNCN phải nộp: ${tax.toLocaleString()}  VND`;
+    }
+</script>
+
+</body>
+</html>

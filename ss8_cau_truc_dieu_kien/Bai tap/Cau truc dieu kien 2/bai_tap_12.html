@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính lãi ngân hàng</title>
+</head>
+<body>
+
+<h3>Tính lãi ngân hàng (Lãi mẹ đẻ lãi con)</h3>
+
+<label for="principal">Nhập số tiền ban đầu (VND):</label>
+<input type="number" id="principal"><br><br>
+
+<label for="rate">Nhập lãi suất hàng tháng (%):</label>
+<input type="number" id="rate"><br><br>
+
+<label for="months">Nhập số tháng gửi:</label>
+<input type="number" id="months"><br><br>
+
+<button onclick="calculateInterest()">Tính lãi</button>
+
+<h3 id="result"></h3>
+
+<script>
+  function calculateInterest() {
+    let P = Number(document.getElementById("principal").value);
+    let r = Number(document.getElementById("rate").value) / 100;
+    let n = Number(document.getElementById("months").value);
+
+    if (P <= 0 || r <= 0 || n <= 0) {
+      document.getElementById("result").innerText = " Vui lòng nhập số tiền, lãi suất và số tháng hợp lệ.";
+      return;
+    }
+
+    let A = P * Math.pow((1 + r), n);
+    let interest = A - P;
+
+    document.getElementById("result").innerText = ` Số tiền sau ${n} tháng: ${A.toLocaleString()} VND
+                                                           \n Tiền lãi: ${interest.toLocaleString()} VND`;
+  }
+</script>
+
+</body>
+</html>

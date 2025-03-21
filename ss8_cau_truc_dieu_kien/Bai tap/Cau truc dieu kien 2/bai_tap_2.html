@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chuyển đổi từ Mét sang Feet</title>
+</head>
+<body>
+
+<h3>Chuyển đổi từ Mét sang Feet</h3>
+<label for="meters">Nhập số mét (m):</label>
+<input type="number" id="meters">
+<button onclick="convertToFeet()">Chuyển đổi</button>
+
+<h3 id="result"></h3>
+
+<script>
+  function convertToFeet() {
+    let meters = Number(document.getElementById("meters").value);
+
+    if (meters > 0) {
+      let feet = meters * 3.28084;
+      document.getElementById("result").innerText = `${meters} mét = ${feet.toFixed(2)} feet`;
+    } else {
+      document.getElementById("result").innerText = "Vui lòng nhập số lớn hơn 0!";
+    }
+  }
+</script>
+
+</body>
+</html>
+

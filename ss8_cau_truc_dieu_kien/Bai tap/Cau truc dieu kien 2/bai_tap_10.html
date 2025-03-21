@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính tiền điện</title>
+</head>
+<body>
+
+<h3>Tính tiền điện</h3>
+<label for="kwh">Nhập số kWh tiêu thụ:</label>
+<input type="number" id="kwh"><br><br>
+
+<button onclick="calculateElectricityBill()">Tính tiền</button>
+
+<h3 id="result"></h3>
+
+<script>
+  function calculateElectricityBill() {
+    let kwh = Number(document.getElementById("kwh").value);
+    let price = 0;
+
+    if (kwh <= 0) {
+      document.getElementById("result").innerText = "Số kWh phải lớn hơn 0.";
+      return;
+    }
+
+    if (kwh <= 50) {
+      price = kwh * 1678;
+    } else if (kwh <= 100) {
+      price = (50 * 1678) + ((kwh - 50) * 1734);
+    } else if (kwh <= 200) {
+      price = (50 * 1678) + (50 * 1734) + ((kwh - 100) * 2014);
+    } else if (kwh <= 300) {
+      price = (50 * 1678) + (50 * 1734) + (100 * 2014) + ((kwh - 200) * 2536);
+    } else if (kwh <= 400) {
+      price = (50 * 1678) + (50 * 1734) + (100 * 2014) + (100 * 2536) + ((kwh - 300) * 2834);
+    } else {
+      price = (50 * 1678) + (50 * 1734) + (100 * 2014) + (100 * 2536) + (100 * 2834) + ((kwh - 400) * 2927);
+    }
+
+    document.getElementById("result").innerText = ` Tiền điện phải trả: ${price.toLocaleString()} VND`;
+  }
+</script>
+
+</body>
+</html>

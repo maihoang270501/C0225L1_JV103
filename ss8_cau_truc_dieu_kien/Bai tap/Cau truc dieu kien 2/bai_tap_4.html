@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính diện tích hình chữ nhật</title>
+</head>
+<body>
+
+<h3>Tính diện tích hình chữ nhật</h3>
+<label for="length">Nhập chiều dài a:</label>
+<input type="number" id="length"><br><br>
+
+<label for="width">Nhập chiều rộng b:</label>
+<input type="number" id="width"><br><br>
+
+<button onclick="calculateRectangleArea()">Tính diện tích</button>
+
+<h3 id="result"></h3>
+
+<script>
+  function calculateRectangleArea() {
+    let a = Number(document.getElementById("length").value);
+    let b = Number(document.getElementById("width").value);
+    let area;
+
+    switch (true) {
+      case (a <= 0 || b <= 0):
+        document.getElementById("result").innerText = "Vui lòng nhập số lớn hơn 0!";
+        break;
+      default:
+        area = a * b;
+        document.getElementById("result").innerText = `Diện tích hình chữ nhật: ${area}`;
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đánh giá học sinh</title>
+</head>
+<body>
+
+<script>
+  let a = Number(prompt("Điểm bài kiểm tra:"));
+  let b = Number(prompt("Điểm thi giữa kỳ:"));
+  let c = Number(prompt("Điểm thi cuối kỳ:"));
+
+  if (a > 8 && b > 8 && c > 8) {
+    document.write("Học sinh loại A");
+  } else if (a > 6 && b > 6 && c > 6) {
+    document.write("Học sinh loại B");
+  } else if (a > 4 && b > 4 && c > 4) {
+    document.write("Học sinh loại C");
+  } else if (a < 3 && b < 3 && c < 3) {
+    document.write("Học sinh loại D");
+  }
+</script>
+
+</body>
+</html>

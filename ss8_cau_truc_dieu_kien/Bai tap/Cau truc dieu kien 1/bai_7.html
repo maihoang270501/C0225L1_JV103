@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính cước điện thoại</title>
+</head>
+<body>
+
+<h3>Nhập thông tin sử dụng:</h3>
+<label for="minutes-internal">Số phút gọi nội mạng:</label>
+<input type="number" id="minutes-internal" min="0"><br><br>
+
+<label for="minutes-external">Số phút gọi ngoại mạng:</label>
+<input type="number" id="minutes-external" min="0"><br><br>
+
+<button onclick="calculatePhoneBill()">Tính cước</button>
+
+<h3 id="result"></h3>
+
+<script>
+  function calculatePhoneBill() {
+    let fixedFee = 25000; // Phí thuê bao cố định
+    let minutesInternal = Number(document.getElementById("minutes-internal").value);
+    let minutesExternal = Number(document.getElementById("minutes-external").value);
+
+    let costInternal = minutesInternal * 600; // Cước nội mạng
+    let costExternal = minutesExternal * 1200; // Cước ngoại mạng
+
+    let totalCost = fixedFee + costInternal + costExternal;
+
+    document.getElementById("result").innerText =
+            `Tổng cước điện thoại: ${totalCost.toLocaleString()} VNĐ`;
+  }
+</script>
+
+</body>
+</html>
