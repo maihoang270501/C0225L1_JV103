@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiểm tra nhiệt độ</title>
+</head>
+<body>
+
+<script>
+  let temperature;
+
+  while (true) {
+    temperature = prompt("Nhập nhiệt độ hiện tại:");
+    temperature = Number(temperature);
+
+    if (isNaN(temperature)) {
+      alert("Vui lòng nhập một số hợp lệ!");
+    } else if (temperature > 100) {
+      alert("Nhiệt độ quá cao! Hãy giảm nhiệt độ xuống.");
+    } else if (temperature < 20) {
+      alert("Nhiệt độ quá thấp! Hãy tăng nhiệt độ lên.");
+    } else {
+      alert("Nhiệt độ ổn định!");
+      break; 
+    }
+  }
+</script>
+
+</body>
+</html>
+

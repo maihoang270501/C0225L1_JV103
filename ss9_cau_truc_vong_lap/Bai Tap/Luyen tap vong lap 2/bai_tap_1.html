@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In dãy Fibonacci</title>
+</head>
+<body>
+
+<script>
+    let a = 0, b = 1;
+
+    document.write("Dãy Fibonacci: <br>");
+
+    while (a < 1000) {
+        document.write(a + " ");
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+</script>
+
+</body>
+</html>
