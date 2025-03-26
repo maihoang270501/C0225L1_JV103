@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dãy Fibonacci</title>
+</head>
+<body>
+<h2>Dãy Fibonacci</h2>
+<p id="result"></p>
+
+<script>
+  function fibonacci(n) {
+    let fibo = [0, 1];
+    for (let i = 2; i < n; i++) {
+      fibo.push(fibo[i - 1] + fibo[i - 2]);
+    }
+    return fibo;
+  }
+
+  let numbers = 20; // Số phần tử của dãy Fibonacci cần in
+  document.getElementById("result").innerHTML = fibonacci(numbers).join(", ");
+</script>
+</body>
+</html>

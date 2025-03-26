@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính Lãi Ngân Hàng</title>
+</head>
+<body>
+<h2>Tính Lãi Ngân Hàng (Lãi Kép)</h2>
+<p>Nhập số tiền gửi ban đầu (VND):</p>
+<input type="number" id="principal" min="0" placeholder="Nhập số tiền">
+
+<p>Nhập số tháng gửi:</p>
+<input type="number" id="months" min="1" placeholder="Nhập số tháng">
+
+<p>Nhập lãi suất hàng tháng (%):</p>
+<input type="number" id="rate" min="0" step="0.01" placeholder="Nhập lãi suất">
+
+<button onclick="calculateInterest()">Tính Lãi</button>
+<p id="result"></p>
+
+<script>
+  function calculateInterest() {
+    let P = parseFloat(document.getElementById("principal").value);
+    let n = parseInt(document.getElementById("months").value);
+    let r = parseFloat(document.getElementById("rate").value) / 100;
+
+    if (isNaN(P) || isNaN(n) || isNaN(r) || P <= 0 || n <= 0 || r < 0) {
+      document.getElementById("result").innerText = "Vui lòng nhập dữ liệu hợp lệ!";
+      return;
+    }
+
+    let A = P * Math.pow(1 + r, n);
+    document.getElementById("result").innerText = `Số tiền sau ${n} tháng: ${A.toLocaleString("vi-VN")} VND`;
+  }
+</script>
+</body>
+</html>

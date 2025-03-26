@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị 20 số nguyên tố đầu tiên</title>
+</head>
+<body>
+<h2>20 số nguyên tố đầu tiên</h2>
+<p id="result"></p>
+
+<script>
+    function isPrime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function getPrimes(count) {
+        let primes = [];
+        let n = 2;
+
+        for (; primes.length < count; n++) {
+            if (isPrime(n)) {
+                primes.push(n);
+            }
+        }
+
+        return primes;
+    }
+
+    document.getElementById("result").innerHTML = getPrimes(20).join(", ");
+</script>
+</body>
+</html>
