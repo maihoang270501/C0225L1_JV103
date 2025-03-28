@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nối mảng thành chuỗi</title>
+</head>
+<body>
+
+<h2>Nối các phần tử trong mảng thành chuỗi</h2>
+
+<p>Mảng ban đầu: <span id="array"></span></p>
+<p>Kết quả sau khi nối: <span id="result"></span></p>
+
+<script>
+    let myColor = ["Red", "Green", "White", "Black"];
+
+    document.getElementById("array").textContent = JSON.stringify(myColor);
+
+    let joinedString = myColor.join(",");
+
+    document.getElementById("result").textContent = joinedString;
+</script>
+
+</body>
+</html>

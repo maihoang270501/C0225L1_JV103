@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi chữ hoa - chữ thường</title>
+</head>
+<body>
+
+<h2>Chuyển đổi chữ thường sang chữ hoa và ngược lại</h2>
+
+<label for="inputText">Nhập chuỗi:</label>
+<input type="text" id="inputText">
+<button onclick="convertCase()">Chuyển đổi</button>
+
+<p>Kết quả: <span id="result"></span></p>
+
+<script>
+    function convertCase() {
+        let inputStr = document.getElementById("inputText").value;
+        let convertedStr = inputStr.split('').map(char => {
+            return char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
+        }).join('');
+        document.getElementById("result").textContent = convertedStr;
+    }
+</script>
+
+</body>
+</html>

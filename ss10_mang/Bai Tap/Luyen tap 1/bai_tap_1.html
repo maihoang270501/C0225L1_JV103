@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm số nguyên ≥ 10</title>
+</head>
+<body>
+
+<h2>Đếm số nguyên lớn hơn hoặc bằng 10</h2>
+
+<p>Mảng số nguyên: <span id="array"></span></p>
+<p>Số lượng số ≥ 10: <span id="count"></span></p>
+
+<script>
+    // Khởi tạo mảng số nguyên gồm 10 phần tử
+    let numbers = [3, 12, 7, 25, 8, 14, 9, 30, 6, 18];
+
+    // Hiển thị mảng ban đầu
+    document.getElementById("array").textContent = JSON.stringify(numbers);
+
+    // Đếm số lượng số nguyên ≥ 10
+    let count = numbers.filter(num => num >= 10).length;
+
+    // Hiển thị kết quả
+    document.getElementById("count").textContent = count;
+</script>
+
+</body>
+</html>
