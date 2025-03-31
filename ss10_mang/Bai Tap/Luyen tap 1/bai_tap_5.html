@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đếm số nguyên âm</title>
+</head>
+<body>
+<h2>Đếm số nguyên âm</h2>
+<p id="result"></p>
+
+<script>
+  let str = "12 -5 23 -8 45 -2 67";
+  let numbers = str.split(" ").map(Number);
+  let negativeCount = numbers.filter(num => num < 0).length;
+
+  document.getElementById("result").textContent = `Số lượng số nguyên âm: ${negativeCount}`;
+</script>
+</body>
+</html>
