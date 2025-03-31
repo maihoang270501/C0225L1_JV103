@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+<h2>Đếm số từ trong chuỗi</h2>
+<p id="text"></p>
+<p id="wordCount"></p>
+
+<script>
+  let str = "Xin chào các bạn!";
+  document.getElementById("text").textContent = `Chuỗi: "${str}"`;
+
+  let wordCount = str.trim().split(/\s+/).length;
+  document.getElementById("wordCount").textContent = `Số từ trong chuỗi: ${wordCount}`;
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hiển thị mảng 2D</title>
+</head>
+<body>
+<h2>Mảng hai chiều</h2>
+<pre id="output"></pre>
+
+<script>
+  // Declare and initialize a sample 2-D array
+  const a = [
+    [1, 2, 1, 24],
+    [8, 11, 9, 4],
+    [7, 0, 7, 27],
+    [7, 4, 28, 14],
+    [3, 10, 26, 7]
+  ];
+  // Iterate through each row in the 2-D array
+  for (const i in a) {
+    // Output the current row index
+    document.writeln(`row ${i}`);
+    // Iterate through each element in the current row
+    for (const j in a[i]) {
+      // Output the current element value
+      document.writeln(` ${a[i][j]}`);
+    }
+  }
+</script>
+</body>
+</html>

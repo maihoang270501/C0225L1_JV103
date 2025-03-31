@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+<h2>So sánh hai chuỗi</h2>
+<label for="str1">Nhập chuỗi 1:</label>
+<input type="text" id="str1">
+<br>
+<label for="str2">Nhập chuỗi 2:</label>
+<input type="text" id="str2">
+<br>
+<button onclick="compareStrings()">So sánh</button>
+<p id="result"></p>
+
+<script>
+  function compareStrings() {
+    let str1 = document.getElementById("str1").value;
+    let str2 = document.getElementById("str2").value;
+
+    let result = (str1 === str2) ? "Hai chuỗi giống nhau." : "Hai chuỗi khác nhau.";
+    document.getElementById("result").textContent = result;
+  }
+</script>
+</body>
+</html>

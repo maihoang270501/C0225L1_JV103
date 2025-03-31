@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+<h2>Thay thế ký tự '-' bằng '_'</h2>
+<p id="original"></p>
+<p id="modified"></p>
+
+<script>
+  let array = ['c', '-', 's', '-', 'c', '2', '6', '-', '1'];
+  document.getElementById("original").textContent = `Mảng ban đầu: ${array.join(" ")}`;
+
+  let modifiedArray = array.map(char => char === '-' ? '_' : char);
+  document.getElementById("modified").textContent = `Mảng sau khi thay thế: ${modifiedArray.join(" ")}`;
+</script>
+</body>
+</html>

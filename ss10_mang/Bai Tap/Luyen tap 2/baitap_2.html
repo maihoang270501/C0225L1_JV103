@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đảo ngược ký tự</title>
+</head>
+<body>
+<h2>Đảo ngược ký tự trong mảng</h2>
+<p id="original"></p>
+<p id="reversed"></p>
+
+<script>
+  let array = ['c', 's', 'c', '2', '6', '1'];
+  document.getElementById("original").textContent = `Mảng ban đầu: ${array.join(" ")}`;
+
+  let reversedString = array.reverse().join("");
+  document.getElementById("reversed").textContent = `Sau khi đảo ngược: ${reversedString}`;
+</script>
+</body>
+</html>

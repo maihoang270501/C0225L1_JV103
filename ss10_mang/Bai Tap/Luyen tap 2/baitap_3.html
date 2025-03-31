@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đếm ký tự số</title>
+</head>
+<body>
+<h2>Đếm ký tự số trong mảng</h2>
+<p id="original"></p>
+<p id="digitCount"></p>
+
+<script>
+  let array = ['c', 's', 'c', '2', '6', '1'];
+  document.getElementById("original").textContent = `Mảng: ${array.join(" ")}`;
+
+  let digitCount = array.filter(char => !isNaN(char) && char >= '0' && char <= '9').length;
+  document.getElementById("digitCount").textContent = `Số lượng ký tự số: ${digitCount}`;
+</script>
+</body>
+</html>
