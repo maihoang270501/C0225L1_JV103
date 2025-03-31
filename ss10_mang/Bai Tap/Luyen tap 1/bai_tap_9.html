@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 8 - Nối hai mảng</title>
+</head>
+<body>
+<h2>Nối hai mảng</h2>
+<p id="arrayA"></p>
+<p id="arrayB"></p>
+<p id="arrayC"></p>
+
+<script>
+  let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  let b = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+  document.getElementById("arrayA").textContent = `Mảng a: ${a.join(", ")}`;
+  document.getElementById("arrayB").textContent = `Mảng b: ${b.join(", ")}`;
+
+  let c = b.concat(a);
+  document.getElementById("arrayC").textContent = `Mảng c (nối từ b và a): ${c.join(", ")}`;
+</script>
+</body>
+</html>
