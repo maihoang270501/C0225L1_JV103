@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        if (number < 2) {
+            alert(number + " không là số nguyên tố");
+            return;
+        }
+
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                alert(number + " không là số nguyên tố");
+                return;
+            }
+        }
+
+        alert(number + " là số nguyên tố");
+    }
+
+    // Nhập số từ người dùng và kiểm tra
+    let number = parseInt(prompt("Nhập số cần check"), 10);
+    if (!isNaN(number)) {
+        isPrime(number);
+    } else {
+        alert("Vui lòng nhập một số hợp lệ!");
+    }
+</script>
+</body>
+</html>
