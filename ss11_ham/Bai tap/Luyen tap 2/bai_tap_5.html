@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 5 - Số nhỏ nhất</title>
+</head>
+<body>
+<h2></h2>
+<p id="ketQua"></p>
+
+<script>
+  const arr = [8, 3, 10];
+  const min = Math.min(...arr);
+
+  document.getElementById("ketQua").innerText =
+          `Trong các số ${arr.join(', ')}, số nhỏ nhất là: ${min}`;
+</script>
+</body>
+</html>

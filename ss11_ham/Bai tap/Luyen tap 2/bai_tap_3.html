@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Giai Thừa</title>
+</head>
+<body>
+<h2>Nhập số để tính giai thừa</h2>
+<input type="number" id="numberInput" placeholder="Nhập số nguyên dương">
+<button onclick="tinhGiaiThua()">Tính</button>
+<h3>Kết quả:</h3>
+<p id="result"></p>
+
+<script>
+    let results = []; // Mảng lưu kết quả giai thừa
+
+    function tinhGiaiThua() {
+        let n = document.getElementById("numberInput").value;
+        n = parseInt(n);
+        if (isNaN(n) || n < 0) {
+            alert("Vui lòng nhập số nguyên dương.");
+            return;
+        }
+
+        let giaithua = 1;
+        for (let i = 1; i <= n; i++) {
+            giaithua *= i;
+        }
+
+        results.push(`Giai thừa của ${n} là ${giaithua}`);
+        document.getElementById("result").innerHTML = results.join("<br>");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<p id="ketQua"></p>
+
+<script>
+  const n = 12;
+  const kq = Number.isInteger(n) && n > 0 ? "Là số nguyên dương." : "Không phải số nguyên dương.";
+
+  document.getElementById("ketQua").innerText =
+          `Số ${n}: ${kq}`;
+</script>
+</body>
+</html>
