@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="rectangleCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<script>
+  class Rectangle {
+    constructor(width, height) {
+      this.width = width;
+      this.height = height;
+    }
+    area() {
+      return this.width * this.height;
+    }
+    draw(){
+      const canvas = document.getElementById("rectangleCanvas");
+      const ctx = canvas.getContext("2d");
+      ctx.rect(0, 0, this.width, this.height);
+
+
+      const area = this.area();
+      ctx.fillStyle = "black";
+      ctx.font = "20px Arial";
+      ctx.fillText("Area: " + area, 10, 20);
+
+    }
+
+  }
+  const myRectangle = new Rectangle(200, 100);
+
+  myRectangle.draw();
+
+
+</script>
+
+</body>
+</html>
