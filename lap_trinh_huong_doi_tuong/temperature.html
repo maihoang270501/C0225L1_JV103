@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+
+<script>
+  class Temperature {
+    constructor(celsius) {
+      this.celsius = celsius;
+    }
+
+    toKelvin() {
+      return this.celsius + 273.15;
+    }
+
+    toFahrenheit() {
+      return (this.celsius * 9 / 5) + 32;
+    }
+  }
+
+  const temp = new Temperature(25); // Đổi 25 thành nhiệt độ bạn muốn
+
+  document.write("Nhiệt độ K: " + temp.toKelvin().toFixed(2) + "<br>");
+  document.write("Nhiệt độ F: " + temp.toFahrenheit().toFixed(2));
+</script>
+
+</body>
+</html>
