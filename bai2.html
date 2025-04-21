@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vowel</title>
+</head>
+<body>
+<h1> Kiểm tra kí tự </h1>
+<label for="character">Nhập kí tự:</label>
+<input type="text" name="character" id="character">
+<button onclick="check()">Submit</button>
+<h2>Kết quả:</h2>
+<p id="result"></p>
+
+<script>
+    function check() {
+        var character = document.getElementById("character").value;
+        var result = document.getElementById("result");
+        result.innerHTML = "";
+        var vowels = "aeiouAEIOU";
+        if (vowels.indexOf(character) !== -1) {
+            result.innerHTML = "là nguyên âm";
+        } else {
+            result.innerHTML = "là phụ âm";
+        }
+    }
+</script>
+</body>
+</html>
